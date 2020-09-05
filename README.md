@@ -2,7 +2,7 @@
 
 Configuration and environment utilities for your PHP web app.
 
-[![Build Status](https://travis-ci.com/folded-php/config.svg?branch=master)](https://travis-ci.com/folded-php/config) [![Maintainability](https://api.codeclimate.com/v1/badges/01cc64f3cc1911b00e3d/maintainability)](https://codeclimate.com/github/folded-php/config/maintainability)
+[![Packagist License](https://img.shields.io/packagist/l/folded/config)](https://github.com/folded-php/config/blob/master/LICENSE) [![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/folded/config)](https://github.com/folded-php/config/blob/master/composer.json#L14) [![Packagist Version](https://img.shields.io/packagist/v/folded/config)](https://packagist.org/packages/folded/config) [![Build Status](https://travis-ci.com/folded-php/config.svg?branch=master)](https://travis-ci.com/folded-php/config) [![Maintainability](https://api.codeclimate.com/v1/badges/01cc64f3cc1911b00e3d/maintainability)](https://codeclimate.com/github/folded-php/config/maintainability)
 
 ## Summary
 
