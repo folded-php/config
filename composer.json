@@ -1,0 +1,41 @@
+{
+  "name": "folded/config",
+  "description": "Configuration utilities for your PHP web app.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Khalyomede",
+      "email": "khalyomede@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.4.0",
+    "illuminate/config": "7.*",
+    "vlucas/phpdotenv": "5.*"
+  },
+  "scripts": {
+    "test": "pest --coverage",
+    "lint": "php-cs-fixer --allow-risky=yes fix"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "2.*",
+    "pestphp/pest": "0.3.*",
+    "phpunit/phpunit": "9.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Folded\\": "src"
+    },
+    "files": [
+      "src/getAllConfig.php",
+      "src/getConfig.php",
+      "src/getEnv.php",
+      "src/hasConfig.php",
+      "src/hasEnv.php",
+      "src/setConfigFolderPath.php",
+      "src/setEnvFolderPath.php"
+    ]
+  }
+}

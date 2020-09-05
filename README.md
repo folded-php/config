@@ -1,0 +1,144 @@
+# folded/config
+
+Configuration and environment utilities for your PHP web app.
+
+## Summary
+
+- [About](#about)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Examples](#examples)
+- [Version support](#version-support)
+
+## About
+
+I created this library to get an easy to setup way to perform configuration/environment value fetch.
+
+Folded is a constellation of packages to help you setting up a web app easily, using ready to plug in packages.
+
+- [folded/routing](https://github.com/folded-php/routing): Routing functions for your PHP web app.
+- [folded/view](https://github.com/folded-php/view): View utilities for your PHP web app.
+
+## Requirements
+
+- PHP version >= 7.4.0
+- Composer installed
+
+## Installation
+
+- [1. Install the package](#1-install-the-package)
+- [2. Set up the library](#2-set-up-the-library)
+
+### 1. Install the package
+
+In your project root directory, run this command:
+
+```bash
+composer require folded/config
+```
+
+### 2. Set up the library
+
+Right before getting the config or env values, integrate this script:
+
+```php
+use function Folded\setConfigFolderPath;
+use function Folded\setEnvFolderPath;
+
+setConfigFolderPath(__DIR__ . "/config");
+setEnvFolderPath(__DIR__);
+```
+
+You don't have to set up both if you only want to use one or the other.
+
+The env folder path is the folder that contains your `.env` file.
+
+## Examples
+
+Since this library uses vlucas/phpdotenv for the env feature, you can learn more on this file format [in the documentation](https://github.com/vlucas/phpdotenv).
+
+- [1. Getting a configuration value](#1-getting-a-configuration-value)
+- [2. Getting an env value](#2-getting-an-env-value)
+- [3. Checking if a configuration exist](#3-checking-if-a-configuration-exist)
+- [4. Check if an env value exist](#4-check-if-an-env-value-exist)
+- [5. Get all config variables](#5-get-all-config-variables)
+
+### 1. Getting a configuration value
+
+In this example, we will get a configuration value.
+
+```php
+use function Folded\getConfig;
+
+echo getConfig("app.name");
+```
+
+Asuming your configuration file is located at `config/app.php`, and contains:
+
+```php
+return [
+	"name" => "Folded",
+];
+```
+
+### 2. Getting an env value
+
+In this example, we will get a value stored in the `.env` file.
+
+```php
+use function Folded\getEnv;
+
+echo getEnv("APP_NAME");
+```
+
+Asuming your `.env` file contains:
+
+```
+APP_NAME="Your app name"
+```
+
+### 3. Checking if a configuration exist
+
+In this example, we will check if a configuration key exist.
+
+```php
+use function Folded\hasConfig;
+
+if (hasConfig("app.name")) {
+	echo "config exist";
+} else {
+	echo "config don't exist";
+}
+```
+
+### 4. Check if an env value exist
+
+In this example, we will check if an env variable exist.
+
+```php
+use function Folded\hasEnv;
+
+if (hasEnv("APP_NAME")) {
+	echo "has env";
+} else {
+	echo "has not env";
+}
+```
+
+### 5. Get all config variables
+
+In this example, we will get all the key/values inside the config file `app.php`.
+
+```php
+use function Folded\getAllConfig;
+
+$app = getAllConfig("app");
+
+echo $app["name"];
+```
+
+## Version support
+
+|        | 7.3 | 7.4 | 8.0 |
+| ------ | --- | --- | --- |
+| v0.1.0 | ❌  | ✔️  | ❓  |
