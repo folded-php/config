@@ -2,6 +2,8 @@
 
 Configuration and environment utilities for your PHP web app.
 
+[![Build Status](https://travis-ci.com/folded-php/config.svg?branch=master)](https://travis-ci.com/folded-php/config) [![Maintainability](https://api.codeclimate.com/v1/badges/01cc64f3cc1911b00e3d/maintainability)](https://codeclimate.com/github/folded-php/config/maintainability)
+
 ## Summary
 
 - [About](#about)
