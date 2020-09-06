@@ -18,6 +18,7 @@ I created this library to get an easy to setup way to perform configuration/envi
 
 Folded is a constellation of packages to help you setting up a web app easily, using ready to plug in packages.
 
+- [folded/request](https://github.com/folded-php/request): Request utilities, including a request validator, for your PHP web app.
 - [folded/routing](https://github.com/folded-php/routing): Routing functions for your PHP web app.
 - [folded/view](https://github.com/folded-php/view): View utilities for your PHP web app.
 
