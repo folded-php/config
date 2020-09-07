@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] 2020-09-07
+
+### Added
+
+- **Nothing changes** in your code, but we now use our shared package [folded/exception](https://github.com/folded-php/exception) for the exception `Folded\Exceptions\FolderNotFoundException` and `Folded\Exceptions\NotAFolderException`.
+
 ## [0.1.0] 2020-09-05
 
 ### Added
