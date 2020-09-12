@@ -67,7 +67,18 @@ class Env
         self::boot();
 
         if (isset($_ENV[$name])) {
-            return $_ENV[$name];
+            $value = $_ENV[$name];
+
+            switch ($value) {
+                case "true":
+                    return true;
+                case "false":
+                    return false;
+                case "null":
+                    return;
+                default:
+                    return $value;
+            }
         }
 
         if ($fallback !== null) {
