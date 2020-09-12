@@ -2,19 +2,23 @@
 
 declare(strict_types = 1);
 
+use Folded\Env;
 use function Folded\setEnvFolderPath;
-use function Folded\getEnv;
+
+beforeEach(function (): void {
+    Env::clear();
+});
 
 it("should get the value of the env", function (): void {
     setEnvFolderPath(__DIR__ . "/misc");
 
-    expect(getenv("APP_NAME"))->toBe("Folded");
+    expect(Folded\getEnv("APP_NAME"))->toBe("Folded");
 });
 
 it("should get the value of the fallback if the env is not present", function (): void {
     setEnvFolderPath(__DIR__ . "/misc");
 
-    expect(getenv("APP_BRAND", "Laravel"))->toBe("Laravel");
+    expect(Folded\getEnv("APP_BRAND", "Laravel"))->toBe("Laravel");
 });
 
 it("should throw an exception if the env name is empty", function (): void {
@@ -22,7 +26,7 @@ it("should throw an exception if the env name is empty", function (): void {
 
     setEnvFolderPath(__DIR__ . "/misc");
 
-    getenv("");
+    Folded\getEnv("");
 });
 
 it("should throw an exception message if the env name is empty", function (): void {
@@ -30,7 +34,7 @@ it("should throw an exception message if the env name is empty", function (): vo
 
     setEnvFolderPath(__DIR__ . "/misc");
 
-    getenv("");
+    Folded\getEnv("");
 });
 
 it("should throw an exception if the env is not present", function (): void {
@@ -38,7 +42,7 @@ it("should throw an exception if the env is not present", function (): void {
 
     setEnvFolderPath(__DIR__ . "/misc");
 
-    getenv("APP_BRAND");
+    Folded\getEnv("APP_BRAND");
 });
 
 it("should throw an exception message if the env is not present", function (): void {
@@ -46,5 +50,5 @@ it("should throw an exception message if the env is not present", function (): v
 
     setEnvFolderPath(__DIR__ . "/misc");
 
-    getenv("APP_BRAND");
+    Folded\getEnv("APP_BRAND");
 });

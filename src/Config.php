@@ -51,6 +51,12 @@ class Config
         return self::engine()->all();
     }
 
+    public static function clear(): void
+    {
+        self::$currentPath = "";
+        self::$folderPath = "";
+    }
+
     /**
      * Get the configuration value.
      *

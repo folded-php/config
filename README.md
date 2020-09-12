@@ -51,11 +51,11 @@ Right before getting the config or env values, integrate this script:
 use function Folded\setConfigFolderPath;
 use function Folded\setEnvFolderPath;
 
-setConfigFolderPath(__DIR__ . "/config");
 setEnvFolderPath(__DIR__);
+setConfigFolderPath(__DIR__ . "/config");
 ```
 
-You don't have to set up both if you only want to use one or the other.
+You don't have to set up both if you only want to use one or the other. However, if you plan to use both, make sure that `setEnvFolderPath()` is called before `setConfigFolderPath()` in order to take advantage of env variables in configurations.
 
 The env folder path is the folder that contains your `.env` file.
 
@@ -92,9 +92,7 @@ return [
 In this example, we will get a value stored in the `.env` file.
 
 ```php
-use function Folded\getEnv;
-
-echo getEnv("APP_NAME");
+echo Folded\getEnv("APP_NAME");
 ```
 
 Asuming your `.env` file contains:

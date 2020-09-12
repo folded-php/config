@@ -2,8 +2,13 @@
 
 declare(strict_types = 1);
 
+use Folded\Config;
 use function Folded\hasConfig;
 use function Folded\setConfigFolderPath;
+
+beforeEach(function (): void {
+    Config::clear();
+});
 
 it("should return true if the config is present", function (): void {
     setConfigFolderPath(__DIR__ . "/misc/config");
