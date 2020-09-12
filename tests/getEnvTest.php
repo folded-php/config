@@ -2,8 +2,13 @@
 
 declare(strict_types = 1);
 
-use function Folded\setEnvFolderPath;
+use Folded\Env;
 use function Folded\getEnv;
+use function Folded\setEnvFolderPath;
+
+beforeEach(function (): void {
+    Env::clear();
+});
 
 it("should get the value of the env", function (): void {
     setEnvFolderPath(__DIR__ . "/misc");

@@ -2,9 +2,17 @@
 
 declare(strict_types = 1);
 
+use Folded\Config;
 use function Folded\getConfig;
+use function Folded\setConfigFolderPath;
+
+beforeEach(function (): void {
+    Config::clear();
+});
 
 it("should return the config", function (): void {
+    setConfigFolderPath(__DIR__ . "/misc/config");
+
     expect(getConfig("app.name"))->toBe("Folded");
 });
 

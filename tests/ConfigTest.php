@@ -6,6 +6,10 @@ use Folded\Config;
 use Folded\Exceptions\FolderNotFoundException;
 use Folded\Exceptions\NotAFolderException;
 
+beforeEach(function (): void {
+    Config::clear();
+});
+
 it("should store the configuration", function (): void {
     $configFolderPath = __DIR__ . "/misc/config";
 
