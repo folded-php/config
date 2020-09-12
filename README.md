@@ -92,9 +92,7 @@ return [
 In this example, we will get a value stored in the `.env` file.
 
 ```php
-use function Folded\getEnv;
-
-echo getEnv("APP_NAME");
+echo Folded\getEnv("APP_NAME");
 ```
 
 Asuming your `.env` file contains:
