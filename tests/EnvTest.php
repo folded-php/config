@@ -65,3 +65,21 @@ it("should throw an exception if the path is not a folder", function (): void {
 
     Env::setFolderPath(__DIR__ . "/misc/.env");
 });
+
+it("should return a boolean", function (): void {
+    Env::setFolderPath(__DIR__ . "/misc");
+
+    expect(Env::get("APP_DEBUG"))->toBeTrue();
+});
+
+it("should return false", function (): void {
+    Env::setFolderPath(__DIR__ . "/misc");
+
+    expect(Env::get("SESSION_ENABLED"))->toBeFalse();
+});
+
+it("should return null", function (): void {
+    Env::setFolderPath(__DIR__ . "/misc");
+
+    expect(Env::get("GMAIL_API_KEY"))->tobeNull();
+});
