@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] 2020-09-12
+
 ### Fixed
 
 - Having an env set to `true`, `false` or `null` will now correctly returns a boolean or `null` instead of a string.
