@@ -14,7 +14,7 @@
     "php": ">=7.4.0",
     "illuminate/config": "7.*",
     "vlucas/phpdotenv": "5.*",
-    "folded/exception": "0.1.*"
+    "folded/exception": "0.3.*"
   },
   "scripts": {
     "test": "pest --coverage",
