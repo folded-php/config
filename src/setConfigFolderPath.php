@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Folded;
 
-if (!function_exists("setConfigFolderPath")) {
+if (!function_exists("Folded\setConfigFolderPath")) {
     /**
      * Set the folder containing the files storing configurations.
      *

@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Folded;
 
-if (!function_exists("hasConfig")) {
+if (!function_exists("Folded\hasConfig")) {
     /**
      * Returns true if the configuration is found, else returns false.
      *

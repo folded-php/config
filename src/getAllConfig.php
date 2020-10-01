@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Folded;
 
-if (!function_exists("getAllConfig")) {
+if (!function_exists("Folded\getAllConfig")) {
     /**
      * Returns all the configurations.
      *

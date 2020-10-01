@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Folded;
 
-if (!function_exists("setEnvFolderPath")) {
+if (!function_exists("Folded\setEnvFolderPath")) {
     /**
      * Set the folder path to find the .env file.
      *
