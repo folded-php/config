@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Folded;
 
-if (!function_exists("hasEnv")) {
+if (!function_exists("Folded\hasEnv")) {
     /**
      * Returns true if the env variable is present, else returns false.
      *
