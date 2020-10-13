@@ -14,7 +14,7 @@ use InvalidArgumentException;
  *
  * @since 0.1.0
  */
-class Env
+final class Env
 {
     /**
      * Whether the env engine has been set up or not.
