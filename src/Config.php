@@ -14,7 +14,7 @@ use InvalidArgumentException;
  *
  * @since 0.1.0
  */
-class Config
+final class Config
 {
     /**
      * The current path with which it a static method of this class has been called.
@@ -46,7 +46,7 @@ class Config
      */
     public static function all(string $path): array
     {
-        static::setCurrentPath($path);
+        self::setCurrentPath($path);
 
         return self::engine()->all();
     }
@@ -72,7 +72,7 @@ class Config
      */
     public static function get(string $path)
     {
-        static::setCurrentPath($path);
+        self::setCurrentPath($path);
 
         return self::engine()->get(self::getConfigKeyName());
     }
@@ -87,7 +87,7 @@ class Config
      */
     public static function getFolderPath(): string
     {
-        return static::$folderPath;
+        return self::$folderPath;
     }
 
     /**
@@ -110,9 +110,9 @@ class Config
      */
     public static function has(string $path): bool
     {
-        static::setCurrentPath($path);
+        self::setCurrentPath($path);
 
-        return self::engine()->has(static::getConfigKeyName());
+        return self::engine()->has(self::getConfigKeyName());
     }
 
     /**
@@ -159,14 +159,14 @@ class Config
             throw new NotAFolderException("$path is not a folder");
         }
 
-        static::$folderPath = $path;
+        self::$folderPath = $path;
     }
 
     private static function engine(): Repository
     {
-        $fileName = static::getFileName();
+        $fileName = self::getFileName();
 
-        $content = require static::$folderPath . DIRECTORY_SEPARATOR . "$fileName.php";
+        $content = require self::$folderPath . DIRECTORY_SEPARATOR . "$fileName.php";
 
         return new Repository($content);
     }
@@ -181,7 +181,7 @@ class Config
      */
     private static function getConfigKeyName(): string
     {
-        return mb_substr(static::$currentPath, mb_strlen(static::getFileName()) + 1);
+        return mb_substr(self::$currentPath, mb_strlen(self::getFileName()) + 1);
     }
 
     /**
@@ -196,7 +196,7 @@ class Config
     {
         $matches = [];
 
-        preg_match("/^[^\.]+/", static::$currentPath, $matches);
+        preg_match("/^[^\.]+/", self::$currentPath, $matches);
 
         return $matches[0];
     }
