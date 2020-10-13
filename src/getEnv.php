@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace Folded;
 
+use InvalidArgumentException;
+
 /**
  * Get the env value. Use the fallback if the env variable is not found.
  *
@@ -12,6 +14,8 @@ namespace Folded;
  *
  * @throws InvalidArgumentException If the env name is empty.
  * @throws InvalidArgumentException If the env variable is not present, and not fallback is specified.
+ *
+ * @return mixed
  *
  * @since 0.1.0
  *
