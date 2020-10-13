@@ -37,6 +37,8 @@ final class Config
      *
      * @throws InvalidArgumentException If the path is empty.
      *
+     * @return array<string,mixed>
+     *
      * @since 0.1.0
      *
      * @example
@@ -63,6 +65,8 @@ final class Config
      * @param string $path The configuration path.
      *
      * @throws InvalidArgumentException If the path is empty.
+     *
+     * @return mixed
      *
      * @since 0.1.0
      *
@@ -141,8 +145,8 @@ final class Config
      *
      * @param string $path The path where the files store configurations.
      *
-     * @throws Folded\Exceptions\FolderNotFoundException If the folder is not found.
-     * @throws Folded\Exceptions\NotAFolderException     If the path is not a folder.
+     * @throws FolderNotFoundException If the folder is not found.
+     * @throws NotAFolderException     If the path is not a folder.
      *
      * @since 0.1.0
      *

@@ -54,6 +54,8 @@ final class Env
      * @throws InvalidArgumentException If the env name is empty.
      * @throws InvalidArgumentException If the env variable is not present, and not fallback is specified.
      *
+     * @return mixed
+     *
      * @since 0.1.0
      *
      * @example
